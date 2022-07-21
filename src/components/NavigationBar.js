@@ -19,7 +19,7 @@ const NavigationBar = () => {
         return false
     }
 
-  return (
+return (
     <footer className='navbar'>
         <nav className='navbarNav'>
             <ul className='navbarListItems'>
@@ -38,7 +38,7 @@ const NavigationBar = () => {
             </ul>
         </nav>
     </footer>
-  )
+)
 }
 
-export default NavigationBar
+export default NavigationBar;
