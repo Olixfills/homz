@@ -8,12 +8,15 @@ import visibilityIcon from '../assets/svg/visibilityIcon.svg'
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
+    name: '',
     email: '',
     password: '',
-    
+    phone: '',
+    address: '',
 
   })
-  const { email, password,} = formData;
+  // eslint-disable-next-line no-unused-vars
+  const {name, email, password, phone, address} = formData;
   // eslint-disable-next-line no-unused-vars
   const navigate = useNavigate()
 

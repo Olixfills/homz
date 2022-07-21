@@ -195,7 +195,7 @@ button {
 }
 
 .formHeader{
-  margin: 5rem auto;
+  margin: 2rem auto;
 }
 
 .nameInput {
@@ -230,7 +230,7 @@ button {
   color: #c85238;
   font-weight: 400;
   text-align: right;
-  margin: 1.2rem auto;
+  margin: 0.2rem auto;
 }
 
 
@@ -306,11 +306,11 @@ button {
 }
 
 .registerLink {
-  margin-top: 1.2rem;
+  margin-top: 1rem;
   color: #00cc66;
   font-weight: 600;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 @media (min-width: 1217px) {
