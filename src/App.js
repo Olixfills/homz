@@ -15,14 +15,14 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path='/' element={<Explore />} />
-          <Route path='/offers' element={<Offers />} />
-          <Route path='/profile' element={<PrivateRoute />}>
+          <Route path='/'  element={<Explore />} />
+          <Route path='offers' element={<Offers />} />
+          <Route path='profile' element={<PrivateRoute />}>
             <Route path='/profile' element={<Profile />}/>
           </Route>
-          <Route path='/signup' element={<SignUp />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/reset-password' element={<ForgotPassword />} />
+          <Route path='signup' element={<SignUp />} />
+          <Route path='login' element={<Login />} />
+          <Route path='reset-password' element={<ForgotPassword />} />
         </Routes>
         <NavigationBar />
       </Router>
