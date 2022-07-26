@@ -6,6 +6,7 @@ import {db} from '../firebase.config'
 
 import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
 import visibilityIcon from "../assets/svg/visibilityIcon.svg";
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -13,9 +14,9 @@ const SignUp = () => {
     name: "",
     email: "",
     password: "",
-    phone: "",
+    phoneNumber: "",
   });
-  const { name, email, password, phone } = formData;
+  const { name, email, password, phoneNumber } = formData;
   const navigate = useNavigate();
 
   const onChange = (e) => {
@@ -30,11 +31,12 @@ const SignUp = () => {
 
     try {
       const auth = getAuth()
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password, name, phone)
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password, name, phoneNumber)
       const user = userCredential.user
 
       updateProfile(auth.currentUser, {
-        displayName: name
+        displayName: name,
+        phoneNumber: phoneNumber
       })
       const formDataCopy = {...formData, }
       delete formDataCopy.password
@@ -42,12 +44,31 @@ const SignUp = () => {
 
       await setDoc(doc(db, 'users', user.uid), formDataCopy)
 
+      toast.success('Signed up Successfully', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+        });
 
       navigate('/')
 
 
     } catch (error) {
-      console.log(error);
+      toast.error('Something went wrong', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+        });
     }
   }
 
@@ -79,12 +100,12 @@ const SignUp = () => {
             />
           </div>
             <input
-              type="phone"
-              name="phone"
+              type="number"
+              name="phoneNumber"
               className="emailInput"
-              id="phone"
+              id="phoneNumber"
               placeholder="0700 0000 000"
-              value={phone}
+              value={phoneNumber}
               onChange={onChange}
             />
             <div className="passwordInputDiv">
