@@ -24,7 +24,6 @@ const onGoogleClick = async () => {
                 name: user.displayName,
                 email: user.email,
                 timestamp: serverTimestamp(),
-                photoUrl: user.photoURL
             })
         }
         toast.success(`Signed ${!docSnap.exists() ? 'Up' : 'In'} Successfully`, {
