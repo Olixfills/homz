@@ -57,7 +57,7 @@ const onGoogleClick = async () => {
 
   return (
     <div className="socialLogin">
-        <p>Sign {location.pathname === 'signUp' ? 'Up' : 'In'} with Google</p>
+        <p>Sign {location.pathname === '/signup' ? 'Up' : 'In'} with Google</p>
         <button className="socialIconDiv" onClick={onGoogleClick}>
             <img src={googleIcon} alt="google" className="socialIconImg" />
         </button>
