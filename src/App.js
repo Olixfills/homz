@@ -9,6 +9,7 @@ import Offers from './pages/Offers';
 import Profile from './pages/Profile';
 import SignUp from './pages/SignUp';
 import 'react-toastify/dist/ReactToastify.css';
+import Category from './pages/Category';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path='signup' element={<SignUp />} />
           <Route path='login' element={<Login />} />
           <Route path='reset-password' element={<ForgotPassword />} />
+          <Route path='category/:categoryName' element={<Category />} />
         </Routes>
         <NavigationBar />
       </Router>

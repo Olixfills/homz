@@ -332,7 +332,9 @@ button {
 }
 
 .exploreCategoryHeading {
-  margin-top: 3rem;
+  margin-top: 2.5rem;
+  font-size: 1.3rem;
+  text-align: center;
 }
 
 .swiper-container {
@@ -399,7 +401,7 @@ button {
 
 .exploreCategoryImg {
   min-height: 115px;
-  height: 15vw;
+  height: 16vw;
   width: 100%;
   border-radius: 1.5rem;
   object-fit: cover;
@@ -408,7 +410,9 @@ button {
 
 .exploreCategoryName {
   font-weight: 500;
-  text-align: left;
+  text-align: center;
+  margin: 5px;
+  font-size: 1.2rem;
 }
 
 .category {
