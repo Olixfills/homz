@@ -240,7 +240,7 @@ button {
 
 .signInBar,
 .signUpBar {
-  margin-top: 1.2rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -262,7 +262,7 @@ button {
 
 .signInText,
 .signUpText {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 700;
 }
 
@@ -286,8 +286,8 @@ button {
 .socialLogin {
   margin: 1.2rem auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .socialIconDiv {
@@ -312,7 +312,7 @@ button {
   color: #00cc66;
   font-weight: 600;
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 1217px) {
