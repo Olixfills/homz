@@ -14,7 +14,7 @@ const [updateDets, setUpdateDets] = useState(false)
 const [formData, setFormData] = useState({
   name: auth.currentUser.displayName,
   email: auth.currentUser.email,
-  phoneNumber: auth.currentUser.phoneNumber,
+  phoneNumber: auth.currentUser.phoneNumber || '',
   photoURL: auth.currentUser.photoURL,
 })
 const {name, email, phoneNumber, photoURL} = formData
