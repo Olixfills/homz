@@ -103,7 +103,8 @@ const onLogOut = () => {
       <div className="profileCard">
         <form>
           <div className="avatar">
-          <img src={photoURL !== null ? photoURL : avatar} alt="avatar" />
+          <img src={auth.currentUser.photoURLURL !== null ? auth.currentUser.photoURL : avatar} alt="avatar" />
+        
 
           </div>
 
