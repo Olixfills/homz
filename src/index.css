@@ -135,7 +135,7 @@ button {
 }
 
 .pageHeader {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 800;
 }
 
@@ -284,7 +284,7 @@ button {
 }
 
 .socialLogin {
-  margin-top: 2.4rem;
+  margin: 1.2rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
