@@ -421,6 +421,9 @@ button {
 
 .categoryListings {
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .categoryListing {
@@ -437,8 +440,8 @@ button {
 
 .categoryListingImg {
   width: 30%;
-  height: 100px;
-  border-radius: 1.5rem;
+  height: 100%;
+  border-radius: 0.8rem;
   object-fit: cover;
 }
 @media (min-width: 1024px) {
@@ -458,22 +461,23 @@ button {
 }
 
 .categoryListingLocation {
-  font-weight: 600;
-  font-size: 0.7rem;
+  font-weight: 600;   
+  font-size: 0.55rem;
   opacity: 0.8;
   margin-bottom: 0;
 }
 
 .categoryListingName {
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   margin: 0;
 }
 
+
 .categoryListingPrice {
-  margin-top: 0.5rem;
+  margin-top: 0.1rem;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #00cc66;
   margin-bottom: 0;
   display: flex;
@@ -488,7 +492,7 @@ button {
 
 .categoryListingInfoText {
   font-weight: 500;
-  font-size: 0.7rem;
+  font-size: 0.57rem;
 }
 
 .loadMore {
@@ -536,13 +540,14 @@ button {
 }
 
 .discountPrice {
-  padding: 0.25rem 0.5rem;
+  padding: 0.2rem 0.4rem;
   background-color: #000000;
   color: #ffffff;
   border-radius: 1rem;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   font-weight: 600;
   display: inline;
+  text-decoration: line-through;
 }
 
 .listingType {
