@@ -2,9 +2,13 @@ import React, { useState } from 'react'
 import { getAuth, updateProfile } from 'firebase/auth' 
 import { doc, updateDoc } from 'firebase/firestore';
 import { db } from '../firebase.config';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+
+
 import avatar from '../assets/png/avatar.png'
+import arrowRightIcon from '../assets/svg/keyboardArrowRightIcon.svg'
+import homeIcon from '../assets/svg/homeIcon.svg'
 
 const Profile = () => {
 const auth = getAuth()
@@ -103,16 +107,24 @@ const onLogOut = () => {
       <div className="profileCard">
         <form>
           <div className="avatar">
-          <img src={auth.currentUser.photoURLURL !== null ? auth.currentUser.photoURL : avatar} alt="avatar" />
+          <img src={auth.currentUser.photoURL !== null ? auth.currentUser.photoURL || photoURL : avatar} alt="avatar" />
         
 
           </div>
 
           <input type="text" name="name" id="name" className={!updateDets ? 'profileName' : 'profileNameActive'} value={name} onChange={onChange} disabled={!updateDets} />
-          <input type="text" name="phoneNumber" id="phoneNumber" className={!updateDets ? 'profileName' : 'profileNameActive'} value={phoneNumber} onChange={onChange} disabled={!updateDets} placeholder='Phone Number' />
+          <input type="text" name="phoneNumber" id="phoneNumber" className={!updateDets ? 'profileName' : 'profileNameActive'} value={phoneNumber || auth.currentUser.phoneNumber || ''} onChange={onChange} disabled={!updateDets} placeholder='Phone Number' />
           <input type="text" name="email" id="email" className='profileName' value={email} onChange={onChange} disabled={true} />
         </form>
       </div>
+
+
+      <Link to='/create-listing' className='createListing'>
+        <img src={homeIcon} alt="home" />
+        <p>Rent or Sell your home</p>
+        <img src={arrowRightIcon} alt="arrow right" />
+
+      </Link>
     </main>
     </div>
   )

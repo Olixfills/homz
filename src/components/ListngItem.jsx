@@ -18,7 +18,7 @@ function ListngItem({listing, id, onDelete}) {
             <div className="categoryListingDetails">
                 <p className="categoryListingLocation">{listing.location}</p>
                 <p className="categoryListingName">{listing.name}</p>
-                
+                 
                 <p className="categoryListingPrice">₦{listing.offer ? listing.discountedPrice.toLocaleString() : listing.regularPrice.toLocaleString()}{listing.type === 'rent' && ' / month'}</p>
                 {listing.offer && <p className="discountPrice">₦{listing.regularPrice.toLocaleString()}{listing.type === 'rent' && ' / month'}</p>}
                 <div className="categoryListingInfoDiv">

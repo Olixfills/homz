@@ -10,6 +10,7 @@ import Profile from './pages/Profile';
 import SignUp from './pages/SignUp';
 import 'react-toastify/dist/ReactToastify.css';
 import Category from './pages/Category';
+import CreateListings from './pages/CreateListings';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='profile' element={<PrivateRoute />}>
             <Route path='/profile' element={<Profile />}/>
           </Route>
+            <Route path='/create-listing' element={<CreateListings />}/>
           <Route path='signup' element={<SignUp />} />
           <Route path='login' element={<Login />} />
           <Route path='reset-password' element={<ForgotPassword />} />
