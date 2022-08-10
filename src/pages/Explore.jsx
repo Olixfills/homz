@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import rentImage from "../assets/jpg/rentCategoryImage.jpg";
 import sellImage from "../assets/jpg/sellCategoryImage.jpg";
+import Slider from "../components/Slider";
 
 const Explore = () => {
   return (
@@ -9,7 +10,7 @@ const Explore = () => {
       <header className="pageHeader">Explore</header>
 
       <main>
-        {/* Slider */}
+        <Slider />
 
         <p className="exploreCategoryHeading">Categories</p>
         <div className="exploreCategories">

@@ -19,8 +19,8 @@ function ListngItem({listing, id, onDelete}) {
                 <p className="categoryListingLocation">{listing.location}</p>
                 <p className="categoryListingName">{listing.name}</p>
                  
-                <p className="categoryListingPrice">₦{listing.offer ? listing.discountedPrice.toLocaleString() : listing.regularPrice.toLocaleString()}{listing.type === 'rent' && ' / month'}</p>
-                {listing.offer && <p className="discountPrice">₦{listing.regularPrice.toLocaleString()}{listing.type === 'rent' && ' / month'}</p>}
+                <p className="categoryListingPrice">₦{listing.offer ? listing.discountedPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') : listing.regularPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{listing.type === 'rent' && ' / month'}</p>
+                {listing.offer && <p className="discountPrice">₦{listing.regularPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{listing.type === 'rent' && ' / month'}</p>}
                 <div className="categoryListingInfoDiv">
                     <img src={bedIcon} alt="bed" />
                     <p className="categoryListingInfoText">

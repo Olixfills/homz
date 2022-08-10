@@ -11,6 +11,8 @@ import SignUp from './pages/SignUp';
 import 'react-toastify/dist/ReactToastify.css';
 import Category from './pages/Category';
 import CreateListings from './pages/CreateListings';
+import SingleListing from './pages/SingleListing';
+import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
           <Route path='login' element={<Login />} />
           <Route path='reset-password' element={<ForgotPassword />} />
           <Route path='category/:categoryName' element={<Category />} />
+          <Route path='category/:categoryName/:listingId' element={<SingleListing />} />
+          <Route path='contact/:landlordId' element={<Contact />} />
         </Routes>
         <NavigationBar />
       </Router>
