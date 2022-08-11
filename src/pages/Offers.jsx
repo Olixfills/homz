@@ -18,6 +18,8 @@ import ListngItem from "../components/ListngItem";
 const Offers = () => {
   const [listings, setlistings] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [lastFetchedListing, setLastFetchedListing] = useState(null)
+
 
   const params = useParams();
 
@@ -33,6 +35,11 @@ const Offers = () => {
         );
 
         const querySnap = await getDocs(q);
+
+
+        const lastVisible = querySnap.docs[querySnap.docs.length - 1]
+
+        setLastFetchedListing(lastVisible)
 
         let listings = [];
 
@@ -51,6 +58,42 @@ const Offers = () => {
 
     fetchListings();
   }, []);
+
+
+
+
+// For Pagination
+  const onFetchMoreListings = async () => {
+    try {
+      const listingsRef = collection(db, "listings");
+      const q = query(
+        listingsRef,
+        where("offer", "==", true),
+        orderBy("timestamp", "desc"),
+        startAfter(lastFetchedListing),
+        limit(10)
+      );
+  
+      const querySnap = await getDocs(q);
+  
+      const lastVisible = querySnap.docs[querySnap.docs.length - 1]
+  
+      setLastFetchedListing(lastVisible)
+  
+      let listings = [];
+  
+      querySnap.forEach((doc) => {
+        listings.push({
+          id: doc.id,
+          data: doc.data(),
+        });
+      });
+      setlistings(prev => [...prev, listings]);
+      setLoading(false);
+    } catch (error) {
+      toast.error("could not fetch listings");
+    }
+  };
 
   return (
     <div className="category">
@@ -71,6 +114,11 @@ const Offers = () => {
               ))}
             </ul>
           </main>
+          {lastFetchedListing && (
+            <p className="loadMore" onClick={onFetchMoreListings}>
+              Load More
+            </p>
+          )}
         </>
       ) : (
         <h4>No offers currently  available</h4>
