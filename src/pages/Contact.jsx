@@ -65,6 +65,7 @@ function Contact() {
               </button>
             </a>
           </form>
+          <div className='emptyDiv'/>
         </main>
       )}
     </div>

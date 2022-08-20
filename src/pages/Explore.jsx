@@ -26,6 +26,7 @@ const Explore = () => {
           </Link>
         </div>
       </main>
+      <div className="emptyDiv"></div>
     </div>
   );
 };

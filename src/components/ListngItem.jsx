@@ -4,13 +4,14 @@ import {Link} from 'react-router-dom'
 
 
 import {ReactComponent as DeleteIcon} from '../assets/svg/deleteIcon.svg'
+import {ReactComponent as EditIcon} from '../assets/svg/editIcon.svg'
 import bedIcon from '../assets/svg/bedIcon.svg'
 import bathIcon from '../assets/svg/bathtubIcon.svg'
 
 
 
 
-function ListngItem({listing, id, onDelete}) {
+function ListngItem({listing, id, onDelete, onEdit}) {
   return (
     <li className='categoryListing' >
         <Link to={`/category/${listing.type}/${id}`} className="categoryListingLink">
@@ -18,7 +19,7 @@ function ListngItem({listing, id, onDelete}) {
             <div className="categoryListingDetails">
                 <p className="categoryListingLocation">{listing.location}</p>
                 <p className="categoryListingName">{listing.name}</p>
-                 
+                
                 <p className="categoryListingPrice">₦{listing.offer ? listing.discountedPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') : listing.regularPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{listing.type === 'rent' && ' / month'}</p>
                 {listing.offer && <p className="discountPrice">₦{listing.regularPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{listing.type === 'rent' && ' / month'}</p>}
                 <div className="categoryListingInfoDiv">
@@ -34,7 +35,10 @@ function ListngItem({listing, id, onDelete}) {
             </div>
         </Link>
         {onDelete && (
-            <DeleteIcon fill='rgb(231,76,60' className='removeIcon' onClick={() => onDelete()} />
+            <DeleteIcon fill='rgb(231,76,60)' className='removeIcon' onClick={() => onDelete()} />
+        )}
+        {onEdit && (
+            <EditIcon fill='rgb(110,200,200)' className='editIcon' onClick={() => onEdit()} />
         )}
     </li>
   )
